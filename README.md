@@ -1,3 +1,5 @@
+
+
 # Animatediff-Cli-Android-Termux
 I finally got animatediff cli to work on termux but u need 16 gb RAM as I'm still testing it on 12gb Ram phone.
 
@@ -28,36 +30,16 @@ python3.10 -m venv .venv
 
 source .venv/bin/activate
 
-# install Torch. Use whatever your favourite torch version >= 2.0.0 is, but, good luck on non-nVidia...
 
 python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
-# install the rest of all the things (probably! I may have missed some deps.)
 
 python -m pip install -e '.[dev]'
 
 
 python -m pip install --upgrade transformers==4.33.0
 
-# you should now be able to
+
 animatediff --help
-
-# There's a nice pretty help screen with a bunch of info that'll print here.
-
-
-# There's a nice pretty help screen with a bunch of info that'll print here.
-
-From here you'll need to put whatever checkpoint you want to use into data/models/sd, copy one of the prompt configs in config/prompts, edit it with your choices of prompt and model (model paths in prompt .json files are relative to data/, e.g. models/sd/vanilla.safetensors), and off you go.
-
-Then it's something like (for an 8GB card):
-
-animatediff generate --device cpu -c config/prompts/dreamshaper8.json -W 512 -H 512 -L 8 -C 8
-
-You may have to drop -C down to 8 on cards with less than 8GB VRAM, and you can raise it to 20-24 on cards with more. 24 is max.
-
-N.B. generating 128 frames is slow...
-
-
-
 
 
