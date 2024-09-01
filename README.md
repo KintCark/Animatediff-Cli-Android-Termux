@@ -1,7 +1,7 @@
 
 
 # Animatediff-Cli-Android-Termux
-I finally got animatediff cli to work on termux but u need 16 gb RAM as I'm still testing it on 12gb Ram phone.
+gradio apps don't work u get crash every time it loads unet:(
 
 
 pkg updated && pkg upgrade -y && termux-setup-storage && pkg install wget -y && pkg install git -y && pkg install proot -y && cd ~ && git clone https://github.com/MFDGaming/ubuntu-in-termux.git && cd ubuntu-in-termux && chmod +x ubuntu.sh && ./ubuntu.sh -y && ./startubuntu.sh
