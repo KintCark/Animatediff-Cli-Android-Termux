@@ -1,5 +1,4 @@
-
-I MODIFIED ANIMATEDIFF CLI TO USE LOW VRAM MODE AND FP16 ON CPU BUY COPYIMG COMFYUI TRICK XD!! IT WORKS!!!!!!!! once I test it I'll upload the py file here after you install animatediff cli just navigate to your animatediff cli folder then go to src folder them animatediff delete that generate.py file and copy my modded version 😉 
+low vram mode is unsupported cause the required packages to run the animatediff are outdated I ran into to many problems this is the only way it can work. ima try again later. I. still working on. the mod
 
 
 
