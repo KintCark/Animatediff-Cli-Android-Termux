@@ -4,6 +4,8 @@
 gradio apps don't work u get crash every time it loads unet:(
 
 
+UPDATE: I found out about an code called low vram mode ima try it in animatediff cli give me an hour I'll report back if it worked!
+
 pkg updated && pkg upgrade -y && termux-setup-storage && pkg install wget -y && pkg install git -y && pkg install proot -y && cd ~ && git clone https://github.com/MFDGaming/ubuntu-in-termux.git && cd ubuntu-in-termux && chmod +x ubuntu.sh && ./ubuntu.sh -y && ./startubuntu.sh
 
 Installing ComfyUI Run below commands sequentially as root user in Ubuntu
