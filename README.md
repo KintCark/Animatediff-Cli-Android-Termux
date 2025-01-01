@@ -8,7 +8,7 @@ pkg updated && pkg upgrade -y && termux-setup-storage && pkg install wget -y && 
 Installing ComfyUI Run below commands sequentially as root user in Ubuntu
 Install basic tools
 
-apt update && apt upgrade -y && apt-get install curl git gcc make build-essential python3 python3-dev python3-distutils python3-pip python3-venv python-is-python3 -y && pip install ffmpeg && apt dist-upgrade -y && apt install wget && apt-get install libgl1 libglib2.0-0 libsm6 libxrender1 libxext6 -y && apt-get install google-perftools &&
+apt update && apt upgrade -y && apt-get install curl git gcc make build-essential python3 python3-dev python3-distutils python3-pip python3-venv python-is-python3 -y && pip install ffmpeg --break-system-packages && apt dist-upgrade -y && apt install wget && apt-get install libgl1 libglib2.0-0 libsm6 libxrender1 libxext6 -y && apt-get install google-perftools &&
 apt install libgoogle-perftools-dev
 
 Install required extensions
@@ -37,10 +37,10 @@ source .venv/bin/activate
 
 # install Torch. Use whatever your favourite torch version >= 2.0.0 is, but, good luck on non-nVidia...
 
-python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 --break-system-packages
 
-pip uninstall transformers &&
-python -m pip install --upgrade transformers==4.33.0
+pip uninstall transformers --break-system-packages &&
+python -m pip install --upgrade transformers==4.33.0 --break-system-packages
 
 
 The error you're encountering is due to the split_torch_state_dict_into_shards function not being available in huggingface-hub version 0.20.3. This function is included starting from version 0.23.0.
@@ -48,11 +48,11 @@ The error you're encountering is due to the split_torch_state_dict_into_shards f
 
 To resolve this issue, update the huggingface-hub library to version 0.23.0 or later:
 
-python -m pip install --upgrade huggingface-hub==0.23.0
+python -m pip install --upgrade huggingface-hub==0.23.0 --break-system-packages
 
 # install the rest of all the things (probably! I may have missed some deps.)
 
-python -m pip install -e '.[dev]'
+python -m pip install -e '.[dev]' --break-system-packages
 
 # you should now be able to
 
@@ -64,7 +64,7 @@ From here you'll need to put whatever checkpoint you want to use into data/model
 
 Then it's something like (for an 8GB card):
 
-animatediff generate -c 'config/prompts/Absolute Reality16.json' -W 512 -H 512 -L 10 -C 4
+animatediff generate -c 'config/prompts/Absolute Reality16.json' -W 512 -H 512 -L 8 -C 8
 
 You may have to drop -C down to 8 on cards with less than 8GB VRAM, and you can raise it to 20-24 on cards with more. 24 is max.
 
