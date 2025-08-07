@@ -36,7 +36,7 @@ source .venv/bin/activate
 
 # install Torch. Use whatever your favourite torch version >= 2.0.0 is, but, good luck on non-nVidia...
 
-python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu pip install --no-cache-dir -r requirements.txt
 
 pip uninstall transformers &&
 python -m pip install --upgrade transformers==4.33.0
