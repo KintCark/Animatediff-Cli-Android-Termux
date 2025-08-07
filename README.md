@@ -36,10 +36,10 @@ source .venv/bin/activate
 
 # install Torch. Use whatever your favourite torch version >= 2.0.0 is, but, good luck on non-nVidia...
 
-python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 --break-system-packages
+python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
-pip uninstall transformers --break-system-packages &&
-python -m pip install --upgrade transformers==4.33.0 --break-system-packages
+pip uninstall transformers &&
+python -m pip install --upgrade transformers==4.33.0
 
 
 The error you're encountering is due to the split_torch_state_dict_into_shards function not being available in huggingface-hub version 0.20.3. This function is included starting from version 0.23.0.
@@ -47,11 +47,11 @@ The error you're encountering is due to the split_torch_state_dict_into_shards f
 
 To resolve this issue, update the huggingface-hub library to version 0.23.0 or later:
 
-python -m pip install --upgrade huggingface-hub==0.23.0 --break-system-packages
+python -m pip install --upgrade huggingface-hub==0.23.0
 
 # install the rest of all the things (probably! I may have missed some deps.)
 
-python -m pip install -e '.[dev]' --break-system-packages
+python -m pip install -e '.[dev]'
 
 # you should now be able to
 
