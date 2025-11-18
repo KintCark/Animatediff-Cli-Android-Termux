@@ -49,6 +49,14 @@ To resolve this issue, update the huggingface-hub library to version 0.23.0 or l
 
 python -m pip install --upgrade huggingface-hub==0.23.0
 
+
+you need diffusers 0.21.0
+
+pip uninstall diffusers && pip install diffusers==0.21.0
+
+do diffusers again and huggingface_hub fix after doing dev install
+
+
 # install the rest of all the things (probably! I may have missed some deps.)
 
 python -m pip install -e '.[dev]'
