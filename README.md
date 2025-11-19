@@ -52,7 +52,7 @@ python -m pip install --upgrade huggingface-hub==0.23.0
 
 you need diffusers 0.25.0
 
-pip uninstall diffusers && pip install diffusers==0.21.0
+pip uninstall diffusers && pip install diffusers==0.25.0
 
 do diffusers again and huggingface_hub fix after doing dev install
 
