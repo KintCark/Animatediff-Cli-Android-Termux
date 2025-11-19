@@ -57,6 +57,10 @@ pip uninstall diffusers && pip install diffusers==0.25.0
 do diffusers again and huggingface_hub fix after doing dev install
 
 
+if you get bumpy not available error install older version of bumpy
+
+pip uninstall numpy && pip install numpy==1.22.4
+
 # install the rest of all the things (probably! I may have missed some deps.)
 
 python -m pip install -e '.[dev]'
