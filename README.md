@@ -50,7 +50,7 @@ To resolve this issue, update the huggingface-hub library to version 0.23.0 or l
 python -m pip install --upgrade huggingface-hub==0.23.0
 
 
-you need diffusers 0.21.0
+you need diffusers 0.25.0
 
 pip uninstall diffusers && pip install diffusers==0.21.0
 
